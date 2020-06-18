@@ -1,0 +1,200 @@
+/*Template Name:Gallery For Mladen
+  Author:Dániel Web
+*/
+[class="title"]{
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
+}
+[class="content"]{
+    margin-top: 100px;
+}
+
+@charset "UTF-8";
+/*heading*/
+@font-face{
+    font-family:AlfaSlabOne-Regular;
+    src:url(../fonts/heading/AlfaSlabOne-Regular.ttf);
+}
+/*paragraph*/
+@font-face{
+    font-family:Alef-Regular;
+    src:url(../fonts/paragraph/Alef-Regular.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+    font-size: 1.4rem;
+    font-family: Alef-Regular;
+    font-weight: 500;
+}
+h1,h2,h3,h4,h5{
+    opacity: 0.88;
+    font-family: AlfaSlabOne-Regular;
+    padding: 0;
+    margin: 0;
+}
+p,span{
+    opacity: 0.88;
+}
+img{
+    border: none;
+    outline: none;
+    
+}
+button{
+    padding: 10px 15px;
+    transition: .5s;
+}
+button:focus,input[type="submit"]:focus{
+    outline: none;
+}
+input[type="text"],input[type="email"],input[type="password"]{
+    width: 100%;
+    height: auto;
+}
+textarea{
+  width: 100%;
+  resize: none;
+}
+ul li{
+    list-style: none;
+}
+/*gallery*/
+#gallery
+{
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    background: url(../images/bg_intro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    padding-bottom: 55px;
+    padding-top: 55px;
+    position: relative;
+}
+
+.fixed{
+    background-attachment: fixed !important;
+}
+#gallery:before{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: rgba(0,0,0,0.55);
+}
+.stars ul li{
+    display: inline;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.stars ul li span{
+    font-size: 18px;
+}
+.stars{
+    margin-top: 15px;
+}
+.box img{
+    width: 100%;
+    height: auto;
+}
+.box{
+    position: relative;
+   overflow: hidden;
+    border: 5px solid white;
+    margin-bottom: 25px;
+   
+}
+.all{
+    position: absolute;
+    top:30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    background: rgba(255,255,255,0.75);
+    transform: rotate(45deg) scale(2,2);
+    opacity: 0;
+    transition: .5s;
+   
+    
+  
+}
+.flex{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
+.all2:before{
+    position: absolute;
+    top:30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    content: '';
+    border-left: 15px solid rgba(0,0,0,0.45);
+    border-bottom: 15px solid rgba(0,0,0,0.45);
+       transform: rotate(45deg) translateX(-200%);
+    opacity: 0;
+    transition: .5s;
+        
+    
+    
+}
+.all2:after{
+    position: absolute;
+    top:30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    content: '';
+    border-top: 15px solid rgba(0,0,0,0.45);
+    border-right:15px solid rgba(0,0,0,0.45);
+       transform: rotate(45deg) translateX(200%);
+    opacity: 0;
+    transition: .5s;
+     
+}
+.social ul li{
+    display: inline;
+    margin-left: 8px;
+    margin-right: 8px;
+   
+    
+}
+.social i{
+    font-size: 30px;
+    cursor: pointer;
+ 
+}
+.social{
+    transform: rotate(-45deg);
+   
+    
+    
+   
+   
+}
+.box:hover .all2:before,.box:hover .all2:after{
+    transform: rotate(45deg) translate(0);
+    opacity: 1;
+}
+.box:hover .all{
+    opacity: 1;
+    transform: rotate(45deg) scale(1,1);
+}
